@@ -3,10 +3,10 @@ import {FaRegUser , FaMobileAlt , FaTabletAlt} from 'react-icons/fa'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {MdClose ,MdCable} from 'react-icons/md'
 import {BsLaptop} from 'react-icons/bs'
-import {TbDeviceWatchStats} from 'react-icons/tb'
+import {TbDeviceWatchStats,TbMessageCircle} from 'react-icons/tb'
 import {IoGameControllerOutline,IoRadioOutline} from 'react-icons/io5'
 
-interface icons{
+export interface icons{
   BiShoppingBag:any;
   FaRegUser:any;
   GiHamburgerMenu:any;
@@ -19,6 +19,8 @@ interface icons{
   IoGameControllerOutline:any;
   IoRadioOutline:any;
   BiHeadphone:any;
+  TbMessageCircle:any;
+
   
 }
 const allIcons:icons = {
@@ -34,6 +36,7 @@ const allIcons:icons = {
   IoGameControllerOutline,
   IoRadioOutline,
   BiHeadphone,
+  TbMessageCircle,
 
 };
 export default allIcons;
