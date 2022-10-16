@@ -1,6 +1,6 @@
 import React,{FC} from 'react'
-import Footer from './footer/Footer'
-import Header from './header/Header'
+import Footer from './footer/FooterUser'
+import Header from './header/HeaderUser'
 
 const LayoutUser: FC= (children) =>{
   return(
