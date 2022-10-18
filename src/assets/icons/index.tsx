@@ -1,15 +1,20 @@
 import { BiShoppingBag ,BiHeadphone } from "react-icons/bi";
-import {FaRegUser , FaMobileAlt , FaTabletAlt} from 'react-icons/fa'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {MdClose ,MdCable} from 'react-icons/md'
-import {BsLaptop} from 'react-icons/bs'
-import {TbDeviceWatchStats,TbMessageCircle} from 'react-icons/tb'
+import {FaRegUser , FaMobileAlt , FaTabletAlt,FaLinkedin,FaFacebookF} from 'react-icons/fa'
+
+import {MdClose ,MdCable,MdEmail,MdWatchLater} from 'react-icons/md'
+import {BsLaptop,BsTelephoneFill,BsTwitter,BsPinterest} from 'react-icons/bs'
+import {TbDeviceWatchStats,TbMessageCircle,TbDiscount2,TbTruckDelivery} from 'react-icons/tb'
 import {IoGameControllerOutline,IoRadioOutline} from 'react-icons/io5'
+import {ImLocation} from 'react-icons/im'
+import {AiFillInstagram , AiOutlineAppstore} from 'react-icons/ai'
+import {RiCustomerService2Fill} from 'react-icons/ri'
+import {SiAuth0} from 'react-icons/si'
+import {FcApproval} from 'react-icons/fc'
 
 export interface icons{
   BiShoppingBag:any;
   FaRegUser:any;
-  GiHamburgerMenu:any;
+
   MdClose:any;
   FaMobileAlt:any;
   BsLaptop:any;
@@ -20,13 +25,27 @@ export interface icons{
   IoRadioOutline:any;
   BiHeadphone:any;
   TbMessageCircle:any;
-
+  BsTelephoneFill:any;
+  MdEmail:any;
+  MdWatchLater:any;
+  ImLocation:any;
+  AiFillInstagram:any;
+  BsTwitter:any;
+  FaLinkedin:any;
+  FaFacebookF:any;
+  BsPinterest:any;
+  TbDiscount2:any;
+  TbTruckDelivery:any;
+  RiCustomerService2Fill:any;
+  SiAuth0:any;
+  FcApproval:any;
+  AiOutlineAppstore:any
   
 }
 const allIcons:icons = {
   BiShoppingBag,
   FaRegUser,
-  GiHamburgerMenu,
+ 
   MdClose,
   FaMobileAlt,
   BsLaptop,
@@ -37,6 +56,21 @@ const allIcons:icons = {
   IoRadioOutline,
   BiHeadphone,
   TbMessageCircle,
+  BsTelephoneFill,
+  MdEmail,
+  MdWatchLater,
+  ImLocation,
+  AiFillInstagram,
+  BsTwitter,
+  FaLinkedin,
+  FaFacebookF,
+  BsPinterest,
+  TbDiscount2,
+  TbTruckDelivery,
+  RiCustomerService2Fill,
+  SiAuth0,
+  FcApproval,
+  AiOutlineAppstore,
 
 };
 export default allIcons;
