@@ -14,7 +14,8 @@ const HeaderUser: FC = () => {
     <>
       <nav className=" flex flex-wrap justify-center items-center w-full h-36 sticky z-10 shadow-xl bg-slate-800  ">
         <div className="w-2/12 absolute text-slate-50 text-2xl right-3 md:right-6  top-8 scale-150 lg:hidden pr-3 pl-12">
-          <allIcons.GiHamburgerMenu
+
+          <allIcons.AiOutlineAppstore 
             className={active ? "hidden" : "flex"}
             onClick={showMenu}
           />
