@@ -1,5 +1,5 @@
 import { BiShoppingBag ,BiHeadphone } from "react-icons/bi";
-import {FaRegUser , FaMobileAlt , FaTabletAlt,FaLinkedin,FaFacebookF} from 'react-icons/fa'
+import {FaRegUser , FaMobileAlt , FaTabletAlt,FaLinkedin,FaFacebookF,FaRegEye,FaRegEyeSlash} from 'react-icons/fa'
 
 import {MdClose ,MdCable,MdEmail,MdWatchLater} from 'react-icons/md'
 import {BsLaptop,BsTelephoneFill,BsTwitter,BsPinterest} from 'react-icons/bs'
@@ -39,14 +39,15 @@ export interface icons{
   RiCustomerService2Fill:any;
   SiAuth0:any;
   FcApproval:any;
-  AiOutlineAppstore:any
+  AiOutlineAppstore:any;
+  FaRegEye:any;
+  FaRegEyeSlash:any;
   
 }
 const allIcons:icons = {
   BiShoppingBag,
   FaRegUser,
- 
-  MdClose,
+   MdClose,
   FaMobileAlt,
   BsLaptop,
   FaTabletAlt,
@@ -71,6 +72,8 @@ const allIcons:icons = {
   SiAuth0,
   FcApproval,
   AiOutlineAppstore,
+  FaRegEye,
+  FaRegEyeSlash,
 
 };
 export default allIcons;
