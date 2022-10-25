@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import allIcons from "../../assets/icons";
 import Images from "../../assets/Index";
 import { Menu, MenuHorizontal } from "../../components/menu/Menu";
+import {PATHS} from '../../config/RouteConfig'
 
 const HeaderUser: FC = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -48,8 +49,8 @@ const HeaderUser: FC = () => {
         </div>
         <div className=" w-2/12  lg:w-3/12 order-2 lg:order-3">
           <div className="flex justify-center items-center ">
-            <div className=" flex  items-center rounded-3xl text-xl md:text-md  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
-              <Link to="./">
+            <div className=" flex  items-center rounded-3xl text-lg  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
+              <Link to={PATHS.LOGIN}>
                 <allIcons.FaRegUser className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 inline-flex" />
 
                 <span className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 hidden lg:inline-flex px-2">
@@ -58,10 +59,10 @@ const HeaderUser: FC = () => {
               </Link>
               <Link
                 className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 px-1 text-center  border-r-[2px] hidden lg:flex"
-                to="./"
+                to={PATHS.REGISTER}
               >
                 عضویت
-              </Link>{" "}
+              </Link>{}
             </div>
 
             <div className="rounded-3xl text-xl text-slate-300 bg-slate-600 p-3 mr-3 lg:mr-4">
