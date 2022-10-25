@@ -18,6 +18,8 @@ import {
   ProductsPage,
   RegesterPage,
   BasketPage,
+  UserProfilePage,
+
 } from "../pages/index";
 export const RouteApp: FC = () => {
   return (
@@ -33,13 +35,13 @@ export const RouteApp: FC = () => {
           <Route path={PATHS.PRODUCT_ID} element={<ProductPage />} />
         </Route>
         <Route element={<ProtectedRoutes />}>
-
+        <Route path={PATHS.DASHBOARD} element={<UserProfilePage />} />
 
         </Route>
         <Route element={<ProtectedForAdminRoutes />}>
+       
 
-
-        </Route>
+        </Route> 
         <Route element={<PrivateRoute />}>
           <Route path={PATHS.LOGIN} element={<LoginPage />} />
           <Route path={PATHS.REGISTER} element={<RegesterPage />} />
