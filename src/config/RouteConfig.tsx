@@ -1,4 +1,40 @@
-export const PATHS = {
+import { StringSchema } from "yup";
+
+interface paths{
+    HOME:string; 
+    PAGE404: string;
+
+    PRODUCTS: string;
+    PRODUCTS_CAT: string;
+    PRODUCTS_CAT_PAGINATION: string;
+    
+    PRODUCT: string;
+    PRODUCT_ID: string;
+
+    BASKET: string;
+    CHECKOUT:string;
+    
+    PAYMENT:string;
+
+    LOGIN: string;
+    REGISTER:string;
+
+    DASHBOARD: string;
+    DASHBOARD_PROFILE: string;
+    DASHBOARD_ORDERS: string;
+    DASHBOARD_ADMIN_ORDERS: string;
+    DASHBOARD_PRODUCT: string;
+    DASHBOARD_QUANTITY: string;
+    DASHBOARD_CATEGORY: string;
+    DASHBOARD_WISHLIST: string;
+    DASHBOARD_USERS: string;
+    DASHBOARD_SETTINGS:string;
+    DASHBOARD_EXIT: string;
+}
+
+
+
+export const PATHS:paths = {
     HOME: '/',
     PAGE404: '*',
 

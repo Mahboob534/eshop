@@ -1,11 +1,10 @@
 import React, { FC } from "react";
-
-import LayoutUser from "./layout/LayoutUser";
+import RouteApp from "./route/RouteApp";
 
 function App() {
   return (
     <>
-      <LayoutUser />
+      <RouteApp />
     </>
   );
 }
