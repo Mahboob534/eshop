@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useState } from "react";
-//....import from icon and image from assets
-import Images from "../../assets/Index";
+//....import from icon  from assets
 import allIcons from "../../assets/icons/index";
+
+//...... import logo component from component
+import Logo from "../../components/logo/Logo";
 
 //........use formik and yup
 import { Formik, FormikHelpers } from "formik";
-import * as yup from "Yup";
+
 //......use react router
 import { useNavigate } from "react-router-dom";
 //...... use axios with write a httpservice class
@@ -29,10 +31,11 @@ interface errorMessage {
 
 export function LoginPage<FC>() {
   const navigate = useNavigate();
-  const [passwordVisibility, setPasswordVisibility] = useState<boolean>(true);
 
+//...... make state for eye icon in password input 
+  const [passwordVisibility, setPasswordVisibility] = useState<boolean>(true);
   const [iconEye, setIconEye] = useState<string>("eye");
-  const handlePasswordVisibility = (): void => {
+  const handlePasswordVisibility = ():void => {
     if (iconEye === "eye") {
       setIconEye("eye-off");
       setPasswordVisibility(!passwordVisibility);
@@ -41,10 +44,19 @@ export function LoginPage<FC>() {
       setPasswordVisibility(!passwordVisibility);
     }
   };
+  
+  
+
+
+//....... register button
+  const goToRegisterPage = (): void => {
+    navigate(PATHS.REGISTER);
+  };
+  
 
   return (
     <>
-  <ToastContainer />
+      <ToastContainer />
       <Formik
         initialValues={{ username: "", password: "" }}
         validate={(value: Values): any => {
@@ -57,7 +69,10 @@ export function LoginPage<FC>() {
           }
           return error;
         }}
-        onSubmit={(values: Values,{setSubmitting}:FormikHelpers<Values>) => {
+        onSubmit={(
+          values: Values,
+          { setSubmitting }: FormikHelpers<Values>
+        ) => {
           setTimeout(() => {
             HttpService.post(LOGIN, values)
               .then((res: any) => {
@@ -66,13 +81,12 @@ export function LoginPage<FC>() {
                   localStorage.setItem(ACCESS_TOKEN, res.data.token);
                   localStorage.setItem(IS_LOGGED_IN, "true");
                   navigate(PATHS.DASHBOARD, { replace: true });
-                
                 }
               })
               .catch(() => {
                 toast.error("نام کاربری یا رمز عبور اشتباه می باشد");
               });
-              setSubmitting(false);
+            setSubmitting(false);
           }, 4000);
         }}
       >
@@ -90,12 +104,7 @@ export function LoginPage<FC>() {
             className="bg-backgroundImageLogin flex flex-col justify-center items-center bg-[100% 100%] h-screen p-5 "
             onSubmit={handleSubmit}
           >
-            <div className="flex justify-center items-center w-full h-32 my-3">
-              <img className="w-16 h-16" src={Images.logo} alt="logo" />
-              <h1 className="text-slate-200 font-bold text-6xl px-4 first-letter:text-red-600">
-                فندق
-              </h1>
-            </div>
+           <Logo/>
             <div className="flex flex-col justify-center items-center w-80 md:w-96 h-[480px] shadow-2xl rounded-2xl  bg-slate-800 opacity-90 p-5">
               <div className="relative">
                 <input
@@ -150,6 +159,7 @@ export function LoginPage<FC>() {
                 <button
                   className="bg-blue-800 text-slate-100 hover:bg-blue-300 w-72 lg:w-80 h-12 rounded  mx-auto "
                   type="button"
+                  onClick={goToRegisterPage}
                 >
                   ثبت نام
                 </button>
