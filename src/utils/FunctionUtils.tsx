@@ -1,3 +1,5 @@
+import React,{useState,FC} from 'react'
+
 import { ACCESS_TOKEN, IS_LOGGED_IN, REFRESH_TOKEN } from "../config/VariableConfig";
 import Navigate from 'universal-navigate';
 
@@ -28,6 +30,9 @@ export const CheckUserExpired = (pageStatus) => {
         }
     }
 }
+
+//..... remove local storage  
+
 export const removeAllUserData=() =>{
     localStorage.removeItem('userData')
     localStorage.removeItem(ACCESS_TOKEN)
@@ -35,3 +40,8 @@ export const removeAllUserData=() =>{
     localStorage.removeItem(IS_LOGGED_IN)
     
 }
+
+
+
+
+
