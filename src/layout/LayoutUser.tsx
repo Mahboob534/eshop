@@ -1,15 +1,18 @@
 import React,{FC} from 'react'
+
 import Footer from './footer/FooterUser'
 import Header from './header/HeaderUser'
-
-const LayoutUser: FC= (children) =>{
+interface propChildren{
+  children:JSX.Element;
+}
+const LayoutUser: FC<propChildren>= ({children}) =>{
   return(
   <div>
     <div >
         <Header/>
     </div>
     <div>
-        children
+        {children}
     </div>
     <div>
         <Footer/>
