@@ -20,7 +20,7 @@ import { PATHS } from "../../config/RouteConfig";
 import { LOGIN } from "../../config/UrlConfig";
 import { IS_LOGGED_IN, ACCESS_TOKEN } from "../../config/VariableConfig";
 
-import {DisplayPassword} from '../../hook/DisplayPassword'
+import DisplayPassword from "../../hook/DisplayPassword";
 
 interface Values {
   username: string;
@@ -35,12 +35,7 @@ export function LoginPage<FC>() {
   const navigate = useNavigate();
 
   //...... make state for eye icon in password input
-  const [passwordVisibility, setPasswordVisibility] = useState<boolean>(true);
-  const [iconEye, setIconEye] = useState<string>("eye");
-  const handlePasswordVisibility = (): void => {
-    
-    }
-  };
+  const { iconEye, passwordVisibility, handlePasswordVisibility } = DisplayPassword();
 
   //....... register button
   const goToRegisterPage = (): void => {
@@ -70,7 +65,7 @@ export function LoginPage<FC>() {
             HttpService.post(LOGIN, values)
               .then((res: any) => {
                 if (res.status == 200 || res.status == 201) {
-                  toast.success(" خوش امدید");
+                  toast.success(" خوش آمدید");
                   localStorage.setItem(ACCESS_TOKEN, res.data.token);
                   localStorage.setItem(IS_LOGGED_IN, "true");
                   navigate(PATHS.DASHBOARD, { replace: true });
@@ -124,14 +119,10 @@ export function LoginPage<FC>() {
                 <span className="absolute text-slate-400 text-xl left-3 top-28 ">
                   {iconEye == "eye" ? (
                     <allIcons.FaRegEyeSlash
-                      onClick={<DisplayPassword passwordVisibility={passwordVisibility}
-                      setPasswordVisibility={setPasswordVisibility} 
-                      iconEye={iconEye} setIconEye={setIconEye} />}
+                      onClick={handlePasswordVisibility}
                     />
                   ) : (
-                    <allIcons.FaRegEye onClick={<DisplayPassword passwordVisibility={passwordVisibility}
-                    setPasswordVisibility={setPasswordVisibility} 
-                    iconEye={iconEye} setIconEye={setIconEye} />} />
+                    <allIcons.FaRegEye onClick={handlePasswordVisibility} />
                   )}
                 </span>
                 <div className="text-red-600 text-sm text-right py-2">
