@@ -1,9 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 //..... use useformik and yap
 import { useFormik } from "formik";
 import * as yup from "yup";
+//....... import icons
+import allIcons from "../../assets/icons";
 //...... logo component
 import Logo from "../../components/logo/Logo";
+
+//....... export display password hook
+import DisplayPassword from "../../hook/DisplayPassword";
+
 
 interface Values {
   username: string;
@@ -12,7 +18,7 @@ interface Values {
   name: string;
   family: string;
   email: string;
-  phone: number;
+  phone: string;
 }
 const validationSchema: any = yup.object().shape({
   username: yup.string().required("نام کاربری نمی تواند خالی باشد"),
@@ -26,11 +32,25 @@ const validationSchema: any = yup.object().shape({
     .required("تکرار کلمه عبور نمی تواند خالی باشد"),
   name: yup.string(),
   family: yup.string(),
-  email: yup.string().email("ادرس ایمیل درست وارد نشده"),
-  phone: yup.number().required(" شماره همراه نمی تواند خالی باشد"),
+  email: yup
+    .string()
+    .matches(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, "آدرس ایمیل درست ****@****.***")
+    .email("ادرس ایمیل وارد نشده"),
+  phone: yup
+    .string()
+    .matches(
+      /09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/,
+      "این شماره نامعتبر است"
+    )
+    .max(11, "شماره همراه را درست وارد نمایید")
+    .required("شماره همراه نمی تواند خالی باشد"),
 });
 
 export function RegesterPage<FC>() {
+  //....... make DisplayPassword
+  const { iconEye, passwordVisibility, handlePasswordVisibility } =
+    DisplayPassword();
+ const [passwordVisible,setPasswordVisible]=useState<boolean>(true)
   //make a object from useFormik
   const formik: any = useFormik({
     initialValues: {
@@ -40,7 +60,7 @@ export function RegesterPage<FC>() {
       name: "",
       family: "",
       email: "",
-      phone: 98,
+      phone: "",
     },
     onSubmit: (values: Values) => {
       alert(values);
@@ -84,10 +104,11 @@ export function RegesterPage<FC>() {
             {formik.errors.email && formik.touched.email && formik.errors.email}{" "}
           </span>
           <input
+            style={{ direction: "ltr" }}
             className=" w-72 lg:w-60 h-12 rounded bg-slate-100 text-slate-700 p-2 my-2 "
-            type="phone"
+            type="number"
             name="phone"
-            placeholder=" شماره تماس"
+            placeholder="0912*******"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.phone}
@@ -99,25 +120,41 @@ export function RegesterPage<FC>() {
           <div className="flex flex-wrap justify-center  lg:justify-around  items-center relative w-full my-2">
             <input
               className="w-72 lg:w-52 h-12 rounded  bg-slate-100 text-slate-700 p-2 my-2 lg:my-0 lg:ml-1 "
-              type='text'
-              //{passwordVisibility ? "password" : "text"}
+              type={passwordVisibility ? "password" : "text"}
               name="password"
               placeholder="کلمه عبور"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
+             
+            <button name={"password"}  className="absolute text-slate-400 text-xl left-3 md:left-10 top-6 lg:left-60 lg:top-3 ">
+            {iconEye == "eye"  ? (
+               <allIcons.FaRegEyeSlash onClick={handlePasswordVisibility} />
+              ) : (
+                <allIcons.FaRegEye onClick={handlePasswordVisibility} />
+              )}
+             
+            </button>
 
             <input
               className="w-72 lg:w-52 h-12 rounded  bg-slate-100 text-slate-700 p-2  "
-              type="password"
-              // {passwordVisibility ? "password" : "text"}
+              type={passwordVisibility ? "password" : "text"}
               name="rePassword"
               placeholder="تکرار کلمه عبور"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.rePassword}
             />
+           
+            <span  className="absolute text-slate-400 text-xl top-[80px] left-3 md:left-10 lg:left-6 lg:top-3 ">
+           
+              {iconEye == "eye" ? (
+                <allIcons.FaRegEyeSlash onClick={handlePasswordVisibility} />
+              ) : (
+                <allIcons.FaRegEye onClick={handlePasswordVisibility} />
+              )}
+            </span>
             <span className="text-red-600 text-sm">
               {" "}
               {formik.errors.password &&
