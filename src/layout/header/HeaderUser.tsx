@@ -4,7 +4,10 @@ import allIcons from "../../assets/icons";
 import Images from "../../assets/Index";
 import { Menu, MenuHorizontal } from "../../components/menu/Menu";
 import {PATHS} from '../../config/RouteConfig'
+<<<<<<< HEAD
 
+=======
+>>>>>>> loginpage
 const HeaderUser: FC = () => {
   const [active, setActive] = useState<boolean>(false);
 
@@ -37,7 +40,7 @@ const HeaderUser: FC = () => {
         <div className="flex justify-center items-center w-8/12 lg:w-3/12 px-3 lg:px-6 ">
           <img className="w-11 h-11 ml-2" src={Images.logo} alt="logo" />
           <h1 className="text-slate-100 text-5xl first-letter:text-red-600">
-            <Link to="./">فندق</Link>
+            <Link to={PATHS.HOME}>فندق</Link>
           </h1>
         </div>
         <div className=" w-full lg:w-6/12 order-3 lg:order-2 px-16">
@@ -49,7 +52,11 @@ const HeaderUser: FC = () => {
         </div>
         <div className=" w-2/12  lg:w-3/12 order-2 lg:order-3">
           <div className="flex justify-center items-center ">
+<<<<<<< HEAD
             <div className=" flex  items-center rounded-3xl text-lg  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
+=======
+            <div className=" flex  items-center rounded-3xl text-xl md:text-md  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
+>>>>>>> loginpage
               <Link to={PATHS.LOGIN}>
                 <allIcons.FaRegUser className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 inline-flex" />
 
