@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+
 //....import from icon  from assets
 import allIcons from "../../assets/icons/index";
 
@@ -10,16 +11,20 @@ import { Formik, FormikHelpers } from "formik";
 
 //......use react router
 import { useNavigate } from "react-router-dom";
+
 //...... use axios with write a httpservice class
 import HttpService from "../../services/Httpservice";
+
 //....... use toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 //....... use export variable in config foloder
 import { PATHS } from "../../config/RouteConfig";
 import { LOGIN } from "../../config/UrlConfig";
 import { IS_LOGGED_IN, ACCESS_TOKEN } from "../../config/VariableConfig";
 
+//.......... hook display password
 import DisplayPassword from "../../hook/DisplayPassword";
 
 interface Values {
@@ -35,7 +40,8 @@ export function LoginPage<FC>() {
   const navigate = useNavigate();
 
   //...... make state for eye icon in password input
-  const { iconEye, passwordVisibility, handlePasswordVisibility } = DisplayPassword();
+  const { iconEye, passwordVisibility, handlePasswordVisibility } =
+    DisplayPassword();
 
   //....... register button
   const goToRegisterPage = (): void => {
