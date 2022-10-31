@@ -50,7 +50,7 @@ export function RegesterPage<FC>() {
   //....... make DisplayPassword
   const { iconEye, passwordVisibility, handlePasswordVisibility } =
     DisplayPassword();
- const [passwordVisible,setPasswordVisible]=useState<boolean>(true)
+
   //make a object from useFormik
   const formik: any = useFormik({
     initialValues: {
