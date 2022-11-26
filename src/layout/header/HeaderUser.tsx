@@ -48,11 +48,7 @@ const HeaderUser: FC = () => {
         </div>
         <div className=" w-2/12  lg:w-3/12 order-2 lg:order-3">
           <div className="flex justify-center items-center ">
-<<<<<<< HEAD
-            <div className=" flex  items-center rounded-3xl text-xl md:text-md  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
-=======
             <div className=" flex items-center rounded-3xl text-lg lg:text-sm text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
->>>>>>> headeruserbranch
               <Link to={PATHS.LOGIN}>
                 <allIcons.FaRegUser className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 inline-flex" />
 
