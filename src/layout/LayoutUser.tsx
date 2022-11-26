@@ -11,10 +11,10 @@ const LayoutUser: FC<propChildren>= ({children}) =>{
     <div >
         <HeaderUser/>
     </div>
-    <div>
+    <div className='relative  shadow-2xl top-36'>
         {children}
     </div>
-    <div>
+    <div className=' relative  shadow-2xl top-36 '>
         <FooterUser/>
     </div>
 

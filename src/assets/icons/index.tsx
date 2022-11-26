@@ -1,15 +1,16 @@
 import { BiShoppingBag ,BiHeadphone } from "react-icons/bi";
 import {FaRegUser , FaMobileAlt , FaTabletAlt,FaLinkedin,FaFacebookF,FaRegEye,FaRegEyeSlash} from 'react-icons/fa'
 
-import {MdClose ,MdCable,MdEmail,MdWatchLater} from 'react-icons/md'
+import {MdClose ,MdCable,MdEmail,MdWatchLater,MdChevronRight,MdChevronLeft} from 'react-icons/md'
 import {BsLaptop,BsTelephoneFill,BsTwitter,BsPinterest} from 'react-icons/bs'
 import {TbDeviceWatchStats,TbMessageCircle,TbDiscount2,TbTruckDelivery} from 'react-icons/tb'
 import {IoGameControllerOutline,IoRadioOutline} from 'react-icons/io5'
 import {ImLocation} from 'react-icons/im'
-import {AiFillInstagram , AiOutlineAppstore} from 'react-icons/ai'
+import {AiFillInstagram , AiOutlineAppstore,AiOutlineArrowLeft,AiOutlineArrowRight} from 'react-icons/ai'
 import {RiCustomerService2Fill} from 'react-icons/ri'
 import {SiAuth0} from 'react-icons/si'
 import {FcApproval} from 'react-icons/fc'
+
 
 export interface icons{
   BiShoppingBag:any;
@@ -42,6 +43,10 @@ export interface icons{
   AiOutlineAppstore:any;
   FaRegEye:any;
   FaRegEyeSlash:any;
+  AiOutlineArrowLeft:any;
+  AiOutlineArrowRight:any;
+  MdChevronLeft : any;
+  MdChevronRight:any
   
 }
 const allIcons:icons = {
@@ -74,6 +79,10 @@ const allIcons:icons = {
   AiOutlineAppstore,
   FaRegEye,
   FaRegEyeSlash,
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  MdChevronRight,
+  MdChevronLeft,
 
 };
 export default allIcons;

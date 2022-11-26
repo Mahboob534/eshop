@@ -12,7 +12,7 @@ const HeaderUser: FC = () => {
   };
   return (
     <>
-      <nav className=" flex flex-wrap justify-center items-center w-full h-36 sticky z-10 shadow-xl bg-slate-800  ">
+      <nav className=" flex flex-wrap justify-center items-center w-full h-36 fixed z-[100] shadow-xl bg-slate-800  ">
         <div className="w-2/12 absolute text-slate-50 text-2xl right-3 md:right-6  top-8 scale-150 lg:hidden pr-3 pl-12">
 
           <allIcons.AiOutlineAppstore 
@@ -48,9 +48,13 @@ const HeaderUser: FC = () => {
         </div>
         <div className=" w-2/12  lg:w-3/12 order-2 lg:order-3">
           <div className="flex justify-center items-center ">
+<<<<<<< HEAD
             <div className=" flex  items-center rounded-3xl text-xl md:text-md  text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
+=======
+            <div className=" flex items-center rounded-3xl text-lg lg:text-sm text-slate-300 ease-in duration-300 bg-slate-600 shadow-xl p-3 lg:p-4 ">
+>>>>>>> headeruserbranch
               <Link to={PATHS.LOGIN}>
-                <allIcons.FaRegUser className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 inline-flex" />
+                <allIcons.FaRegUser className="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 inline-flex" />
 
                 <span className="transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 hidden lg:inline-flex px-2">
                   ورود
