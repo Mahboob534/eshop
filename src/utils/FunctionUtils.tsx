@@ -3,7 +3,7 @@ import React,{useState,FC} from 'react'
 import { ACCESS_TOKEN, IS_LOGGED_IN, REFRESH_TOKEN } from "../config/VariableConfig";
 import Navigate from 'universal-navigate';
 
-export const parseJwt  = (token) => {
+export const parseJwt  = (token:any) => {
     let base64Url = token.split('.')[1];
     let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
@@ -11,7 +11,7 @@ export const parseJwt  = (token) => {
     }).join(''));
     return JSON.parse(jsonPayload);
 };
-export const CheckUserExpired = (pageStatus) => {
+export const CheckUserExpired = (pageStatus:string) => {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (!token) return;
     const { exp } = parseJwt(token);

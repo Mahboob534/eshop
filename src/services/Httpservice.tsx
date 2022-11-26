@@ -3,13 +3,14 @@ import axios from 'axios'
 import {LOGIN , BASE_URL} from '../config/UrlConfig'
 import {ToastContainer, toast } from 'react-toastify'
 import {ACCESS_TOKEN,IS_LOGGED_IN} from '../config/VariableConfig'
+import Navigate from 'universal-navigate';
 class HttpService{
     constructor(){
         axios.defaults.baseURL=BASE_URL
-        axios.defaults.timeout=2000;
+       
         axios.interceptors.request.use((config:any):any =>  {
             const token:any =localStorage.getItem(ACCESS_TOKEN)
-            if(config.url !== LOGIN){
+            if(config.url !== LOGIN && token){
                 config.headers['token'] =`${token}`
 
             }
@@ -29,6 +30,11 @@ class HttpService{
                 toast.error(" شما دسترسی لازم برای این کار را ندارید")
                 localStorage.setItem(IS_LOGGED_IN, false.toString());
                 localStorage.removeItem(IS_LOGGED_IN);
+                Navigate.push({
+                    url: '/login?expired=true',
+                    animated: true
+                })
+             
             }
            return Promise.reject(error)
         }
@@ -38,19 +44,19 @@ class HttpService{
         
         
     }
-    get(url:any,config:any):any{
+    get(url:any,config?:any):any{
         return axios.get(url,config)
     }
     post(url:any,data:any,config?:any):any{
         return axios.post(url,data,config)
     }
-    put(url:any,data:any,config:any):any{
+    put(url:any,data:any,config?:any):any{
         return axios.put(url,data,config)
     }
-    patch(url:any,data:any,config:any):any{
+    patch(url:any,data:any,config?:any):any{
         return axios.patch(url,data,config)
     }
-    delete(url:any,config:any):any{
+    delete(url:any,config?:any):any{
         return axios.delete(url,config)
     }
 
