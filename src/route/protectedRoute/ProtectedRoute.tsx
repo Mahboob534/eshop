@@ -14,7 +14,7 @@ const useAuth = () =>
     }
 }
 export const ProtectedRoutes =() =>{
- const location =useLocation()
+ const location = useLocation()
  useEffect(()=>{
     CheckUserExpired("Protected")
 
@@ -45,5 +45,5 @@ export const  ProtectedForAdminRoutes=()=>{
     },[location])
     const isAuth=useAuth()
     const isAdminAuth=useAdminAuth()
-    return isAuth && isAdminAuth == 'admin'? <Outlet/> : <Navigate to={PATHS.DASHBOARD}/>
+    return isAuth || isAdminAuth == 'userData'? <Outlet/> : <Navigate to={PATHS.DASHBOARD}/>
 }
