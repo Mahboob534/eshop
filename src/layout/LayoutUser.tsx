@@ -1,29 +1,20 @@
 import React,{FC} from 'react'
-<<<<<<< HEAD
+
 import FooterUser from './footer/FooterUser'
 import HeaderUser from './header/HeaderUser'
 interface propChildren{
   children:JSX.Element;
 }
-
-=======
-
-import Footer from './footer/FooterUser'
-import Header from './header/HeaderUser'
-interface propChildren{
-  children:JSX.Element;
-}
->>>>>>> loginpage
 const LayoutUser: FC<propChildren>= ({children}) =>{
   return(
   <div>
     <div >
         <HeaderUser/>
     </div>
-    <div>
+    <div className='relative  shadow-2xl top-36'>
         {children}
     </div>
-    <div>
+    <div className=' relative  shadow-2xl top-36 '>
         <FooterUser/>
     </div>
 
