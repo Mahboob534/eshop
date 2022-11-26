@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { menuItems, lists } from "../../components/menu/MenuItem";
 import Images from "../../assets/Index";
 import allIcons from "../../assets/icons";
-import { buyGuideList, favoriteArticles } from "./List";
+import { footerLists,footerList,footerFavorites,footerFavorite } from "./List";
 
 const FooterUser: FC = () => {
   return (
@@ -41,8 +41,8 @@ const FooterUser: FC = () => {
         <div className="w-6/12 lg:w-3/12 text-slate-100 ">
           <h2 className="text-xl font-bold text-start py-3"> راهنمای خرید </h2>
           <ul>
-            {buyGuideList.map((item: string) => (
-              <li className="py-[7px]">{item}</li>
+            {footerLists.map((item:footerList) => (
+              <li key={item.id} className="py-[7px]">{item.buyGuideList}</li>
             ))}
           </ul>
         </div>
@@ -57,8 +57,8 @@ const FooterUser: FC = () => {
         <div className="w-full lg:w-3/12  text-slate-100">
           <h2 className="text-xl font-bold text-start py-3">پربازدیدترین مقالات</h2>
           <ul>
-            {favoriteArticles.map((item: string) => (
-              <li className="py-2">{item}</li>
+            {footerFavorites.map((item:footerFavorite) => (
+              <li key={item.id} className="py-2">{item.favoriteArticles}</li>
             ))}
           </ul>
         </div>
