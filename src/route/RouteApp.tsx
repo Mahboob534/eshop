@@ -38,10 +38,10 @@ export const RouteApp: FC = () => {
         <Route path={PATHS.DASHBOARD} element={<UserProfilePage />} />
 
         </Route>
-        <Route element={<ProtectedForAdminRoutes />}>
+         <Route element={<ProtectedForAdminRoutes />}>
        
 
-        </Route> 
+        </Route>  
         <Route element={<PrivateRoute />}>
           <Route path={PATHS.LOGIN} element={<LoginPage />} />
           <Route path={PATHS.REGISTER} element={<RegesterPage />} />
