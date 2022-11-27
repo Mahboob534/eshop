@@ -1,5 +1,3 @@
-export {BasketPage} from './Basket/Basket'
-export {CheckoutPage} from './Checkout/Checkout'
 
 export {
     UserOrdersPage,
@@ -21,3 +19,5 @@ export {PaymentPage} from './Payment/Payment'
 export {ProductPage} from './Product/Product'
 export {ProductsPage} from './Products/Products'
 export {RegesterPage} from './Regester/Regester'
+export {BasketPage} from './Basket/Basket'
+export {CheckoutPage} from './Checkout/Checkout'
