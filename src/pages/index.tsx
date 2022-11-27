@@ -14,10 +14,10 @@ export {
 
 export{HomePage} from './Home/Home'
 export {LoginPage} from './Login/Login'
-export {NotFoundPage} from './Notfound/NotFound' 
+export {NotFoundPage} from './Notfound/NotFoundpage' 
 export {PaymentPage} from './Payment/Payment'
 export {ProductPage} from './Product/Product'
 export {ProductsPage} from './Products/Products'
 export {RegesterPage} from './Regester/Regester'
-export {BasketPage} from './Basket/Basket'
+export {BasketPage} from './Basket/BasketPage'
 export {CheckoutPage} from './Checkout/Checkout'
