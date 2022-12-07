@@ -41,6 +41,43 @@ export const removeAllUserData=() =>{
     
 }
 
+export function toFarsiNumber(n:string) {
+    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+
+    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
+  }
+   export const numberDivider = (number:string) => {
+    if (number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    return "";
+  };
+
+
+  export function ShowPrice(price:string, FA_Number = false) {
+    price = price.replace(/\,/g, '');
+    const objRegex = new RegExp('(-?[0-9]+)([0-9]{3})');
+    while (objRegex.test(price)) {
+        price = price.replace(objRegex, '$1,$2');
+    }
+
+    if(FA_Number) {
+        const persian = {0: '۰', 1: '۱', 2: '۲', 3: '۳', 4: '۴', 5: '۵', 6: '۶', 7: '۷', 8: '۸', 9: '۹'};
+        const string = (price + '').split('');
+        const count = string.length;
+        let num;
+        for (let i = 0; i <= count; i++) {
+            num = string[i];
+            if (persian[num]) {
+                string[i] = persian[num];
+            }
+        }
+        return string.join('');
+    } else {
+        return price;
+    }
+}
+
 
 
 
