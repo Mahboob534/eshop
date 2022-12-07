@@ -12,10 +12,9 @@ import { Link, Navigate } from "react-router-dom";
 //................all of routes
 import { PATHS } from "../../config/RouteConfig";
 //........... use category component in component folder
-import Category from "../../components/category/Category";
+
 import SliderProducts from "../../components/carousel/SliderProducts";
-//....... getCategory is function for getting all of category by api
-import { GetCategory } from "../../api/GetCategory";
+
 
 export function HomePage<FC>() {
   return (
@@ -42,7 +41,7 @@ export function HomePage<FC>() {
         </div>
 
         <div className="w-full h-full p-3">
-          <SliderProducts idLocation = {"home"} />
+          <SliderProducts  />
         </div>
       </>
     </LayoutUser>
