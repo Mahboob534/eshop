@@ -24,11 +24,11 @@ export default function Category<FC>(props:props) {
   
 
   return (
-    <div className ="flex  bg-red-600 my-2 ">
+    <div className ="flex  my-2 ">
         {products ? products.map((product:any)=>
 
-        <div className='flex w-full justify-center items-center m-3 'key={product.id}>
-             <Card product = {product} />
+        <div className='w-full m-1 static'key={product.id}>
+             <Card   product = {product} />
             </div> 
        
         ) : null
