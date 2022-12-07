@@ -16,7 +16,7 @@ function CarouselComponent<FC>() {
     setActiveSlide(activeSlide === 0 ? sliderLength - 1 : activeSlide - 1);
   };
 
-  const nextSlide = () => {
+  const nextSlide = ():void => {
     setActiveSlide(activeSlide === sliderLength - 1 ? 0 : activeSlide + 1);
   };
   function auto() {
