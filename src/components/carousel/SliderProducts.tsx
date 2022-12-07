@@ -10,7 +10,7 @@ import { PATHS } from "../../config/RouteConfig";
 //........... use category component in component folder
 import Category from "../../components/category/Category";
 
-const SliderProducts: FC = (props) => {
+const SliderProducts: FC = () => {
   const [category, setCategory] = useState<any>([]);
 
   useEffect(() => {
@@ -20,12 +20,10 @@ const SliderProducts: FC = (props) => {
   const clickSliderRight = (id: number): void => {
     let slider: any = document.getElementById("slider" + id);
     slider.scrollLeft = slider.scrollLeft + 300;
-  
   };
   const clickSliderLeft = (id: number): void => {
     let slider: any = document.getElementById("slider" + id);
     slider.scrollLeft = slider.scrollLeft - 300;
-   
   };
 
   return (
@@ -35,28 +33,38 @@ const SliderProducts: FC = (props) => {
             let { id, name_fa } = item;
             return (
               <div
-                className="flex justify-center rounded-2xl border-1 border-slate-300 mx-5 "
+                className="flex  rounded-2xl border-1 border-slate-300 mx-5 "
                 key={id}
               >
-                <div className="flex relative bg-red-600 overflow-x-hidden scroll-smooth whitespace-nowrap text-center rounded-2xl p-3 z-10 right-0 opacity-95 my-5">
-                  <Link to={PATHS.PRODUCTS_CAT}>
-                    <h3 className="w-64 h-96 text-xl text-slate-300 ">
+                <div className="flex justify-center items-center relative bg-red-600 overflow-x-hidden scroll-smooth whitespace-nowrap text-center rounded-2xl p-3  right-0  my-5">
+                  <div>
+                    <h3 className="w-64 h-16  text-xl text-slate-100 ">
                       {name_fa}
                     </h3>
-                  </Link>
+                    <Link to={PATHS.PRODUCTS_CAT}>
+                      <p className="text-slate-100  hover:text-slate-600">
+                        {" "}
+                        نمایش تمام محصولات {name_fa}
+                      </p>
+                    </Link>
+                  </div>
+
                   <allIcons.MdChevronRight
                     onClick={() => clickSliderRight(id)}
                     size={40}
-                    className=" absolute text-5xl text-slate-200 z-100 cursor-pointer top-1/2 right-72  "
+                    className=" absolute text-5xl  text-slate-400 hover:text-slate-600 z-100 cursor-pointer top-1/2 right-72  "
                   />
-                  <div id={"slider" + id} className="overflow-x-hidden scroll-smooth whitespace-nowrap">
+                  <div
+                    id={"slider" + id}
+                    className="overflow-x-hidden scroll-smooth whitespace-nowrap"
+                  >
                     <Category name={id} key={id} />
                   </div>
 
                   <allIcons.MdChevronLeft
                     onClick={() => clickSliderLeft(id)}
                     size={40}
-                    className="absolute text-5xl text-slate-200 z-100 cursor-pointer top-1/2 left-3  "
+                    className="absolute text-5xl text-slate-400 hover:text-slate-600 z-100 cursor-pointer top-1/2 left-3  "
                   />
                 </div>
               </div>
