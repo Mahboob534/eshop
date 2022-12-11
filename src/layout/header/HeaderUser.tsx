@@ -1,10 +1,10 @@
-import React, { useState, FC } from "react";
+import React, { useState, FC,ReactElement } from "react";
 import { Link } from "react-router-dom";
 import allIcons from "../../assets/icons";
 import Images from "../../assets/Index";
 import { Menu, MenuHorizontal } from "../../components/menu/Menu";
 import {PATHS} from '../../config/RouteConfig'
-const HeaderUser: FC = () => {
+const HeaderUser: FC = ():ReactElement => {
   const [active, setActive] = useState<boolean>(false);
 
   const showMenu = (): void => {
