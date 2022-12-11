@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, ReactElement, useEffect, useState } from "react";
 //............ import tow carousel from component carousel folder
 import CarouselComponent from "../../components/carousel/Carousel";
 import CarouselSmall from "../../components/carousel/CarouselSmall";
@@ -15,8 +15,7 @@ import { PATHS } from "../../config/RouteConfig";
 
 import SliderProducts from "../../components/carousel/SliderProducts";
 
-
-export function HomePage<FC>() {
+export const HomePage: FC = (): ReactElement => {
   return (
     <LayoutUser>
       <>
@@ -41,9 +40,9 @@ export function HomePage<FC>() {
         </div>
 
         <div className="w-full h-full p-3">
-          <SliderProducts  />
+          <SliderProducts />
         </div>
       </>
     </LayoutUser>
   );
-}
+};
