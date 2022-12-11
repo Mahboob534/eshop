@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, ReactElement } from "react";
 
 //....import from icon  from assets
 import allIcons from "../../assets/icons/index";
@@ -36,7 +36,7 @@ interface errorMessage {
   password?: string;
 }
 
-export function LoginPage<FC>() {
+export const LoginPage:FC = ():ReactElement => {
   const navigate = useNavigate();
 
   //...... make state for eye icon in password input

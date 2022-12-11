@@ -29,7 +29,7 @@ export const RouteApp: FC = () => {
           <Route path={PATHS.HOME} element={<HomePage />} />
           <Route path={PATHS.BASKET} element={<BasketPage />} />
           <Route path={PATHS.CHECKOUT} element={<CheckoutPage />} />
-          <Route path={PATHS.PRODUCT} element={<ProductPage />} />
+          <Route path={PATHS.PRODUCTS_CAT} element={< ProductsPage />} />
           <Route path={PATHS.PAGE404} element={<NotFoundPage />} />
           <Route path={PATHS.PAYMENT} element={<PaymentPage />} />
           <Route path={PATHS.PRODUCT_ID} element={<ProductPage />} />

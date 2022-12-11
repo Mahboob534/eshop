@@ -1,45 +1,11 @@
 
 
-interface paths{
-    HOME:string; 
-    PAGE404: string;
-
-    PRODUCTS: string;
-    PRODUCTS_CAT: string;
-    PRODUCTS_CAT_PAGINATION: string;
-    
-    PRODUCT: string;
-    PRODUCT_ID: string;
-
-    BASKET: string;
-    CHECKOUT:string;
-    
-    PAYMENT:string;
-
-    LOGIN: string;
-    REGISTER:string;
-
-    DASHBOARD: string;
-    DASHBOARD_PROFILE: string;
-    DASHBOARD_ORDERS: string;
-    DASHBOARD_ADMIN_ORDERS: string;
-    DASHBOARD_PRODUCT: string;
-    DASHBOARD_QUANTITY: string;
-    DASHBOARD_CATEGORY: string;
-    DASHBOARD_WISHLIST: string;
-    DASHBOARD_USERS: string;
-    DASHBOARD_SETTINGS:string;
-    DASHBOARD_EXIT: string;
-}
-
-
-
-export const PATHS:paths = {
+export  const PATHS = {
     HOME: '/',
     PAGE404: '*',
 
     PRODUCTS: '/products',
-    PRODUCTS_CAT: '/products/:categoryName',
+    PRODUCTS_CAT: `/products/:id_category`,
     PRODUCTS_CAT_PAGINATION: '/products/:categoryName/:pageNumber',
     
     PRODUCT: '/product',
@@ -64,4 +30,6 @@ export const PATHS:paths = {
     DASHBOARD_USERS: '/dashboard/users',
     DASHBOARD_SETTINGS: '/dashboard/settings',
     DASHBOARD_EXIT: '/dashboard/logout',
-}
+}as const
+
+type PATHS = typeof PATHS

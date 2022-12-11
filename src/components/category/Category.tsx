@@ -1,40 +1,31 @@
-import React,{FC,useState, useEffect} from 'react'
+import React, { FC, ReactElement, useState, useEffect } from "react";
 
+import { GetProductsByName } from "../../api/GetProductByName";
+import { LOGIN } from "../../config/UrlConfig";
 
+import Card from "../card/Card";
+interface idProps {
+  id: number;
+}
+const Category: FC<idProps> = (props: idProps) :ReactElement => {
+  const id = props.id;
 
-import {GetProductsByName} from '../../api/GetProductByName'
-import { LOGIN } from '../../config/UrlConfig';
-
-import Card from '../card/Card'
- interface props{
-    name:number
- }
-export default function Category<FC>(props:props) {
-    const name=props.name
- 
-
-  const [products,setProducts]=useState<any>()
-  useEffect(()=>{
-    GetProductsByName(name).then((res)=>
-    setProducts(res.data)
-
-    )
-  },[name])
- // console.log(products);
-  
+  const [products, setProducts] = useState<any>();
+  useEffect(() => {
+    GetProductsByName(id).then((res) => setProducts(res.data));
+  }, [id]);
+  // console.log(products);
 
   return (
-    <div className ="flex  my-2 ">
-        {products ? products.map((product:any)=>
-
-        <div className='w-full m-1 static'key={product.id}>
-             <Card   product = {product} />
-            </div> 
-       
-        ) : null
-
-        }
-      
+    <div className="flex  my-2 ">
+      {products
+        ? products.map((product: any) => (
+            <div className="w-full m-1 static" key={product.id}>
+              <Card product={product} />
+            </div>
+          ))
+        : null}
     </div>
-  )
-}
+  );
+};
+export default Category;

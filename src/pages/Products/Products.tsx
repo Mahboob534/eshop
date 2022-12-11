@@ -1,14 +1,19 @@
-import React,{FC,useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
-import {GetProductsByName} from '../../api/GetProductByName'
-export  function ProductsPage<FC>() {
+import React, { FC, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+import Category from "../../components/category/Category";
+
+export const ProductsPage: FC = () => {
+  let idParams = useParams()
+  //console.log(idParams);
   
-
+  let category_id = idParams.id_category
+ // console.log(category_id);
+  
+  useEffect(() => {}, []);
   return (
-    <div>
-
-
-      
-    </div>
-  )
-}
+    <>
+       <Category id={category_id}  />
+    </>
+  );
+};

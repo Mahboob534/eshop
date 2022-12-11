@@ -12,77 +12,44 @@ import {SiAuth0} from 'react-icons/si'
 import {FcApproval} from 'react-icons/fc'
 
 
-export interface icons{
-  BiShoppingBag:any;
-  FaRegUser:any;
 
-  MdClose:any;
-  FaMobileAlt:any;
-  BsLaptop:any;
-  FaTabletAlt:any;
-  TbDeviceWatchStats:any;
-  MdCable:any;
-  IoGameControllerOutline:any;
-  IoRadioOutline:any;
-  BiHeadphone:any;
-  TbMessageCircle:any;
-  BsTelephoneFill:any;
-  MdEmail:any;
-  MdWatchLater:any;
-  ImLocation:any;
-  AiFillInstagram:any;
-  BsTwitter:any;
-  FaLinkedin:any;
-  FaFacebookF:any;
-  BsPinterest:any;
-  TbDiscount2:any;
-  TbTruckDelivery:any;
-  RiCustomerService2Fill:any;
-  SiAuth0:any;
-  FcApproval:any;
-  AiOutlineAppstore:any;
-  FaRegEye:any;
-  FaRegEyeSlash:any;
-  AiOutlineArrowLeft:any;
-  AiOutlineArrowRight:any;
-  MdChevronLeft : any;
-  MdChevronRight:any
-  
-}
-const allIcons:icons = {
-  BiShoppingBag,
-  FaRegUser,
-   MdClose,
-  FaMobileAlt,
-  BsLaptop,
-  FaTabletAlt,
-  TbDeviceWatchStats,
-  MdCable,
-  IoGameControllerOutline,
-  IoRadioOutline,
-  BiHeadphone,
-  TbMessageCircle,
-  BsTelephoneFill,
-  MdEmail,
-  MdWatchLater,
-  ImLocation,
-  AiFillInstagram,
-  BsTwitter,
-  FaLinkedin,
-  FaFacebookF,
-  BsPinterest,
-  TbDiscount2,
-  TbTruckDelivery,
-  RiCustomerService2Fill,
-  SiAuth0,
-  FcApproval,
-  AiOutlineAppstore,
-  FaRegEye,
-  FaRegEyeSlash,
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  MdChevronRight,
-  MdChevronLeft,
+ const  allIcons = {
+  BiShoppingBag:BiShoppingBag,
+  FaRegUser: FaRegUser,
+   MdClose:MdClose,
+  FaMobileAlt:FaMobileAlt,
+  BsLaptop:BsLaptop,
+  FaTabletAlt:FaTabletAlt,
+  TbDeviceWatchStats:TbDeviceWatchStats,
+  MdCable:MdCable,
+  IoGameControllerOutline:IoGameControllerOutline,
+  IoRadioOutline:IoRadioOutline,
+  BiHeadphone:BiHeadphone,
+  TbMessageCircle:TbMessageCircle,
+  BsTelephoneFill:BsTelephoneFill,
+  MdEmail:MdEmail,
+  MdWatchLater:MdWatchLater,
+  ImLocation: ImLocation,
+  AiFillInstagram:AiFillInstagram,
+  BsTwitter:BsTwitter,
+  FaLinkedin:FaLinkedin,
+  FaFacebookF:FaFacebookF,
+  BsPinterest:BsPinterest,
+  TbDiscount2:TbDiscount2,
+  TbTruckDelivery:TbTruckDelivery,
+  RiCustomerService2Fill:RiCustomerService2Fill,
+  SiAuth0:SiAuth0,
+  FcApproval: FcApproval,
+  AiOutlineAppstore:AiOutlineAppstore,
+  FaRegEye:FaRegEye,
+  FaRegEyeSlash:FaRegEyeSlash ,
+  AiOutlineArrowLeft:AiOutlineArrowLeft,
+  AiOutlineArrowRight:AiOutlineArrowRight,
+  MdChevronRight:MdChevronRight,
+  MdChevronLeft:MdChevronLeft,
 
-};
-export default allIcons;
+  } as const
+
+  type allIcons=typeof allIcons
+ export default allIcons
+

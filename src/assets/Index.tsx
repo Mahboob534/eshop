@@ -11,32 +11,20 @@ import speaker from "./images/انواع-اسپیکر.png";
 import Handsfree1 from "./images/هندزفری1.png";
 import smartWatch from "./images/خرید-ساعت-هوشمند.png";
 
-interface images {
-  logo: any;
-  tandisHoghogh: any;
-  tandisFanavar: any;
-  symbolNational: any;
-  symbolElectronic: any;
-  laptopSlide1: any;
-  hardSlide2: any;
-  handsfreeSlide3: any;
-  instagram: any;
-  speaker: any;
-  Handsfree1: any;
-  smartWatch: any;
-}
-const Images: images = {
-  logo,
-  tandisHoghogh,
-  tandisFanavar,
-  symbolNational,
-  symbolElectronic,
-  laptopSlide1,
-  hardSlide2,
-  handsfreeSlide3,
-  instagram,
-  speaker,
-  Handsfree1,
-  smartWatch,
-};
+
+const Images  = {
+  logo:logo,
+  tandisHoghogh:tandisHoghogh,
+  tandisFanavar:tandisFanavar,
+  symbolNational:symbolNational ,
+  symbolElectronic:symbolElectronic,
+  laptopSlide1:laptopSlide1,
+  hardSlide2:hardSlide2,
+  handsfreeSlide3:handsfreeSlide3,
+  instagram:instagram,
+  speaker:speaker,
+  Handsfree1:Handsfree1,
+  smartWatch:smartWatch,
+}as const
+type Images=typeof Images
 export default Images;
