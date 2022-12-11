@@ -2,7 +2,7 @@ import React from "react";
 
 import allIcons from "../../assets/icons/index";
 
-import {toFarsiNumber,numberDivider} from '../../utils/FunctionUtils'
+import {ShowPrice} from '../../utils/FunctionUtils'
 interface propsProducts {
   product: any;
 }
@@ -28,7 +28,7 @@ export default function Card(props: propsProducts) {
           </button>
         </div>
         <div className="">
-          <p>  <span className="ml-2">قیمت :</span>{numberDivider(toFarsiNumber(products.price.amount))}</p>
+          <p>  <span className="ml-2">قیمت :</span>{ShowPrice(products.price.amount,true)}</p>
         </div>
       </div>
     </div>
