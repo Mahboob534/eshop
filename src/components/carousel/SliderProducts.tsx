@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, ReactElement, useState, useEffect } from "react";
 
 //....... getCategory is function for getting all of category by api
 import { GetCategory } from "../../api/GetCategory";
@@ -9,9 +9,10 @@ import { Link, Navigate } from "react-router-dom";
 import { PATHS } from "../../config/RouteConfig";
 //........... use category component in component folder
 import Category from "../../components/category/Category";
+ 
 
-const SliderProducts: FC = () => {
-  const [category, setCategory] = useState<any>([]);
+const SliderProducts: FC = ():ReactElement => {
+  const [category, setCategory] = useState<[]>([]);
 
   useEffect(() => {
     GetCategory().then((res) => setCategory(res.data));
@@ -41,7 +42,7 @@ const SliderProducts: FC = () => {
                     <h3 className="w-64 h-16  text-xl text-slate-100 ">
                       {name_fa}
                     </h3>
-                    <Link to={PATHS.PRODUCTS_CAT}>
+                    <Link to={`/products/${id}`}>
                       <p className="text-slate-100  hover:text-slate-600">
                         {" "}
                         نمایش تمام محصولات {name_fa}
@@ -58,7 +59,7 @@ const SliderProducts: FC = () => {
                     id={"slider" + id}
                     className="overflow-x-hidden scroll-smooth whitespace-nowrap"
                   >
-                    <Category name={id} key={id} />
+                    <Category id={id}  />
                   </div>
 
                   <allIcons.MdChevronLeft
