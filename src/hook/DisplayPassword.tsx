@@ -6,8 +6,7 @@ import React, {FC, useState } from "react";
 //   passwordVisibility:boolean;
 
 // }
-
- const DisplayPassword  = () => {
+ const DisplayPassword = () => {
   const [passwordVisibility, setPasswordVisibility] = useState<boolean>(true);
   const [iconEye, setIconEye] = useState<string>("eye");
  const handlePasswordVisibility=()=>{
