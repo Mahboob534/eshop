@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, ReactElement, useState } from "react";
 //..... use useformik and yap
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -9,7 +9,6 @@ import Logo from "../../components/logo/Logo";
 
 //....... export display password hook
 import DisplayPassword from "../../hook/DisplayPassword";
-
 
 interface Values {
   username: string;
@@ -38,15 +37,14 @@ const validationSchema: any = yup.object().shape({
     .email("ادرس ایمیل وارد نشده"),
   phone: yup
     .string()
-    .matches(
-      /09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/,
+    .matches(/(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/ig,
       "این شماره نامعتبر است"
     )
     .max(11, "شماره همراه را درست وارد نمایید")
     .required("شماره همراه نمی تواند خالی باشد"),
 });
 
-export function RegesterPage<FC>() {
+export const RegesterPage: FC = () :ReactElement => {
   //....... make DisplayPassword
   const { iconEye, passwordVisibility, handlePasswordVisibility } =
     DisplayPassword();
@@ -127,14 +125,16 @@ export function RegesterPage<FC>() {
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
-             
-            <button name={"password"}  className="absolute text-slate-400 text-xl left-3 md:left-10 top-6 lg:left-60 lg:top-3 ">
-            {iconEye == "eye"  ? (
-               <allIcons.FaRegEyeSlash onClick={handlePasswordVisibility} />
+
+            <button
+              name={"password"}
+              className="absolute text-slate-400 text-xl left-3 md:left-10 top-6 lg:left-60 lg:top-3 "
+            >
+              {iconEye == "eye" ? (
+                <allIcons.FaRegEyeSlash onClick={handlePasswordVisibility} />
               ) : (
                 <allIcons.FaRegEye onClick={handlePasswordVisibility} />
               )}
-             
             </button>
 
             <input
@@ -146,9 +146,8 @@ export function RegesterPage<FC>() {
               onBlur={formik.handleBlur}
               value={formik.values.rePassword}
             />
-           
-            <span  className="absolute text-slate-400 text-xl top-[80px] left-3 md:left-10 lg:left-6 lg:top-3 ">
-           
+
+            <span className="absolute text-slate-400 text-xl top-[80px] left-3 md:left-10 lg:left-6 lg:top-3 ">
               {iconEye == "eye" ? (
                 <allIcons.FaRegEyeSlash onClick={handlePasswordVisibility} />
               ) : (
@@ -210,4 +209,4 @@ export function RegesterPage<FC>() {
       </form>
     </>
   );
-}
+};
