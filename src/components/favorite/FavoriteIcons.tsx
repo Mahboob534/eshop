@@ -1,8 +1,12 @@
 import React,{FC} from 'react'
-
+import allIcons from '../../assets/icons/index'
 const FavoriteIcons:FC=()=> {
   return (
-    <div>FavoraiteIcons</div>
+    <div className="flex flex-wrap w-32 ">
+     
+
+
+    </div>
   )
 }
 
