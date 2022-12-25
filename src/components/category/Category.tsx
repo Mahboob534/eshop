@@ -10,7 +10,7 @@ interface idProps {
 const Category: FC<idProps> = (props: idProps): ReactElement => {
   const products = props.products
   return (
-    <div className="flex w-full">
+    <div className="flex gap-8 ">
       {products 
         ? 
         products.map((product: any) => (

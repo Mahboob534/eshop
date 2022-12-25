@@ -23,7 +23,7 @@ export const ProductsPage: FC = () => {
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
     const nPages = Math.ceil(products.length / recordsPerPage)
-   const pageName:string ="productsPage"
+ 
    console.log(currentRecords);
    useEffect(() => {
        GetProductsByName(Number(category_id)).then((res) => setProducts(res.data))
@@ -41,7 +41,7 @@ export const ProductsPage: FC = () => {
         </div>
         <div className=" flex justify-around items-center w-full my-1 ">
           <Category  products={currentRecords} />
-           {/* <Card product={currentRecords} />  */}
+           
         </div>
         <Pagination
           nPages={nPages}
