@@ -9,15 +9,23 @@ import { Link, Navigate } from "react-router-dom";
 import { PATHS } from "../../config/RouteConfig";
 //........... use category component in component folder
 import Category from "../../components/category/Category";
- 
+import { GetProductsByName } from "../../api/GetProductByName";
 
 const SliderProducts: FC = ():ReactElement => {
   const [category, setCategory] = useState<[]>([]);
+  const [products, setProducts] = useState<any>();
+ 
 
   useEffect(() => {
     GetCategory().then((res) => setCategory(res.data));
   }, []);
 
+   useEffect(() => {
+    category.map((item:any)=>
+    GetProductsByName(item.id).then((res) => setProducts(res.data))
+    )
+    
+  }, [category]);
   const clickSliderRight = (id: number): void => {
     let slider: any = document.getElementById("slider" + id);
     slider.scrollLeft = slider.scrollLeft + 300;
@@ -59,7 +67,7 @@ const SliderProducts: FC = ():ReactElement => {
                     id={"slider" + id}
                     className="overflow-x-hidden scroll-smooth whitespace-nowrap"
                   >
-                    <Category id={id}  />
+                    <Category products={products} />
                   </div>
 
                   <allIcons.MdChevronLeft

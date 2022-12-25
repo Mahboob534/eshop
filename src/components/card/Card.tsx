@@ -1,8 +1,10 @@
 import React from "react";
-
+// import icon costanst 
 import allIcons from "../../assets/icons/index";
 
 import {ShowPrice} from '../../utils/FunctionUtils'
+
+import { FILE_URL } from "../../config/UrlConfig";
 interface propsProducts {
   product: any;
 }
@@ -13,7 +15,7 @@ export default function Card(props: propsProducts) {
       <div className="w-full  ">
         <img
           className="h-72"
-          src={`http://localhost:3002/files/${products.images[0]}`}
+          src={`${FILE_URL}/${products.images[0]}`}
           alt="thumbnail"
         />
       </div>
