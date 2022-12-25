@@ -1,4 +1,5 @@
 export const BASE_URL : string = "http://localhost:3002";
+export const FILE_URL : string ="http://localhost:3002/files"
 export const LOGIN :string = "/auth/login";
 export const REFRESH_TOKEN_URL: string = "/auth/refresh-token";
 export const REGISTER: string = "/users";
