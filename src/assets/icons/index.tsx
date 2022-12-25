@@ -54,5 +54,5 @@ const allIcons = {
   MdChevronRight:MdChevronRight,
   MdChevronLeft:MdChevronLeft,
 
-type allIcons = typeof allIcons;
+} as const;
 export default allIcons;
