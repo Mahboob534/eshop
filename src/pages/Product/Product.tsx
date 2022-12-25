@@ -1,7 +1,10 @@
 import React,{FC} from 'react'
-
-export  function ProductPage<FC>() {
+import {useParams} from 'react-router-dom'
+export const ProductPage :FC= ()=> {
+  let idParams = useParams();
   return (
-    <div>Product</div>
+    <>
+    
+    </>
   )
 }
